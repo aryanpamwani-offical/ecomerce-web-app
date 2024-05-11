@@ -3,5 +3,5 @@ const contactController = require('../controllers/contact.controller');
 
 const router=express.Router();
 
-router.post("/contact",contactController);
+router.post("/",contactController);
 module.exports=router
