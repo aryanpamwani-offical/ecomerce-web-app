@@ -22,7 +22,7 @@ dbConnect().then(()=>{
 const PORT = process.env.PUBLIC_PORT || 4000;
 
 // Error Handling middlewares
-app.use(notFound);
+// app.use(notFound);
 app.use(errorHandler);
 
 app.use('/api/v1/file',fileRoutes);
