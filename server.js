@@ -6,7 +6,7 @@ const userRoutes = require('./routes/user.route')
 const productRoutes = require('./routes/product.route')
 const dbConnect = require('./db/db.js');
 const cors = require('cors');
-
+const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 dotenv.config({path:"./.env"});
 
 app.use(cors())
@@ -19,6 +19,10 @@ dbConnect().then(()=>{
     console.log(err)
 ]);
 const PORT = process.env.PUBLIC_PORT || 4000;
+
+// Error Handling middlewares
+app.use(notFound);
+app.use(errorHandler);
 
 app.use('/api/v1/file',fileRoutes);
 app.use('/api/v1/auth',userRoutes);

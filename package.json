@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "dev": " npx nodemon server.js",
+    "start": "node server.js"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.2.0",
